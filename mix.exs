@@ -8,11 +8,11 @@ defmodule NervesSystemNanopiNeo.Mixfile do
   def project do
     [app: :nerves_system_nanopi_neo,
      version: @version,
-     elixir: "~> 1.2",
-     compilers: Mix.compilers ++ [:nerves_system],
-     description: description,
-     package: package,
-     deps: deps]
+     elixir: "~> 1.3",
+     compilers: Mix.compilers ++ [:nerves_package],
+     description: description(),
+     package: package(),
+     deps: deps()]
   end
 
   def application do
@@ -20,9 +20,9 @@ defmodule NervesSystemNanopiNeo.Mixfile do
   end
 
   defp deps do
-    [{:nerves_system, "~> 0.1.4"},
-     {:nerves_system_br, "~> 0.6.1"},
-     {:nerves_toolchain_arm_unknown_linux_gnueabihf, "~> 0.6.0"}]
+    [{:nerves, "~> 0.4.0"},
+     {:nerves_system_br, "~> 0.9.2"},
+     {:nerves_toolchain_arm_unknown_linux_gnueabihf, "~> 0.9.0"}]
   end
 
   defp description do
