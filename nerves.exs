@@ -5,11 +5,14 @@ version =
   |> File.read!
   |> String.strip
 
+
+pkg = "nerves_system_nanopi_neo"
+
 config :nerves_system_nanopi_neo, :nerves_env,
   type: :system,
   version: version,
   compiler: :nerves_package,
-  artifact_url: ["https://github.com/dhanson358/nerves_system_nanopi_neo/releases/download/v0.0.16/nerves_system_nanopi_neo_016.tar.gz"],
+  artifact_url: ["https://github.com/troygnichols/#{pkg}/releases/download/v#{version}/#{pkg}-#{version}.tar.gz"],
   platform: Nerves.System.BR,
   platform_config: [
    defconfig: "nerves_defconfig",
