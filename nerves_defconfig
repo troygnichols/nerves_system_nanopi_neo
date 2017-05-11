@@ -103,7 +103,7 @@ BR2_ZCAT="gzip -d -c"
 BR2_BZCAT="bzcat"
 BR2_XZCAT="xzcat"
 BR2_TAR_OPTIONS=""
-BR2_DEFCONFIG="/mnt/sda3/nerves_build/nerves_system_nanopi_neo/nerves_defconfig"
+BR2_DEFCONFIG="/home/tn/code/nerves_system_nanopi_neo/nerves_defconfig"
 BR2_DL_DIR="$(TOPDIR)/dl"
 BR2_HOST_DIR="$(BASE_DIR)/host"
 
@@ -161,12 +161,12 @@ BR2_TOOLCHAIN_EXTERNAL=y
 BR2_TOOLCHAIN_EXTERNAL_CUSTOM=y
 BR2_TOOLCHAIN_EXTERNAL_DOWNLOAD=y
 # BR2_TOOLCHAIN_EXTERNAL_PREINSTALLED is not set
-BR2_TOOLCHAIN_EXTERNAL_URL="https://github.com/nerves-project/nerves-toolchain/releases/download/v0.6.0/nerves-arm-unknown-linux-gnueabihf-linux-x86_64-v0.6.0.tar.xz"
+BR2_TOOLCHAIN_EXTERNAL_URL="https://github.com/nerves-project/toolchains/releases/download/v0.10.0/nerves_toolchain_arm_unknown_linux_gnueabihf-0.10.0.linux-x86_64.tar.xz"
 BR2_TOOLCHAIN_EXTERNAL_CUSTOM_PREFIX="arm-unknown-linux-gnueabihf"
 BR2_TOOLCHAIN_EXTERNAL_PREFIX="arm-unknown-linux-gnueabihf"
 BR2_TOOLCHAIN_EXTERNAL_GLIBC=y
-# BR2_TOOLCHAIN_EXTERNAL_GCC_5 is not set
-BR2_TOOLCHAIN_EXTERNAL_GCC_4_9=y
+BR2_TOOLCHAIN_EXTERNAL_GCC_5=y
+# BR2_TOOLCHAIN_EXTERNAL_GCC_4_9=y
 # BR2_TOOLCHAIN_EXTERNAL_GCC_4_8 is not set
 # BR2_TOOLCHAIN_EXTERNAL_GCC_4_7 is not set
 # BR2_TOOLCHAIN_EXTERNAL_GCC_4_6 is not set
@@ -282,8 +282,8 @@ BR2_SYSTEM_BIN_SH="busybox"
 BR2_SYSTEM_DHCP=""
 # BR2_TARGET_TZ_INFO is not set
 BR2_ROOTFS_USERS_TABLES=""
-BR2_ROOTFS_OVERLAY="${NERVES_SYSTEM}/board/nerves-common/rootfs-additions ${NERVES_DEFCONFIG_DIR}/rootfs-additions"
-BR2_ROOTFS_POST_BUILD_SCRIPT="${BR2_EXTERNAL}/board/nerves-common/post-build.sh"
+BR2_ROOTFS_OVERLAY="${BR2_EXTERNAL_NERVES_PATH}/board/nerves-common/rootfs-additions ${NERVES_DEFCONFIG_DIR}/rootfs-additions"
+BR2_ROOTFS_POST_BUILD_SCRIPT="${BR2_EXTERNAL_NERVES_PATH}/board/nerves-common/post-build.sh"
 BR2_ROOTFS_POST_IMAGE_SCRIPT="${NERVES_DEFCONFIG_DIR}/post-createfs.sh"
 BR2_ROOTFS_POST_SCRIPT_ARGS=""
 
@@ -297,7 +297,7 @@ BR2_LINUX_KERNEL=y
 # BR2_LINUX_KERNEL_CUSTOM_GIT is not set
 # BR2_LINUX_KERNEL_CUSTOM_HG is not set
 BR2_LINUX_KERNEL_CUSTOM_LOCAL=y
-BR2_LINUX_KERNEL_CUSTOM_LOCAL_PATH="/mnt/sda3/linux-opi"
+BR2_LINUX_KERNEL_CUSTOM_LOCAL_PATH="/home/tn/code/linux-orangepi/linux"
 BR2_LINUX_KERNEL_VERSION="custom"
 BR2_LINUX_KERNEL_USE_DEFCONFIG=y
 # BR2_LINUX_KERNEL_USE_CUSTOM_CONFIG is not set
@@ -1712,35 +1712,35 @@ BR2_PACKAGE_WPA_SUPPLICANT_PASSPHRASE=y
 #
 
 #
-# Please note:                                           
+# Please note:
 #
 
 #
-# - Buildroot does *not* generate binary packages,       
+# - Buildroot does *not* generate binary packages,
 #
 
 #
-# - Buildroot does *not* install any package database.   
+# - Buildroot does *not* install any package database.
 #
 
 #
-# *                                                      
+# *
 #
 
 #
-# It is up to you to provide those by yourself if you    
+# It is up to you to provide those by yourself if you
 #
 
 #
-# want to use any of those package managers.             
+# want to use any of those package managers.
 #
 
 #
-# *                                                      
+# *
 #
 
 #
-# See the manual:                                        
+# See the manual:
 #
 
 #
@@ -1884,7 +1884,7 @@ BR2_TARGET_UBOOT_CUSTOM_VERSION=y
 # BR2_TARGET_UBOOT_CUSTOM_HG is not set
 BR2_TARGET_UBOOT_CUSTOM_VERSION_VALUE="2016.11"
 BR2_TARGET_UBOOT_VERSION="2016.11"
-BR2_TARGET_UBOOT_PATCH="/mnt/sda3/nerves_build/nanopi_out/config/uboot"
+BR2_TARGET_UBOOT_PATCH="/home/tn/code/nerves_system_nanopi_neo/uboot"
 BR2_TARGET_UBOOT_NEEDS_DTC=y
 # BR2_TARGET_UBOOT_FORMAT_AIS is not set
 # BR2_TARGET_UBOOT_FORMAT_BIN is not set
@@ -2226,7 +2226,7 @@ BR2_LINUX_KERNEL_CUSTOM_GIT_VERSION=""
 #
 # Nerves options
 #
-NERVES_SYSTEM="/mnt/sda3/nerves_build/nerves_system_br"
+NERVES_SYSTEM="/home/tn/code/nerves_system_br"
 BR2_NERVES_SYSTEM_NAME="nerves_system_nanopi_neo"
 BR2_NERVES_ADDITIONAL_IMAGE_FILES=""
 # BR2_PACKAGE_BBORG_OVERLAYS is not set
