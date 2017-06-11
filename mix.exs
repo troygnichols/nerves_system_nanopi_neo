@@ -38,7 +38,7 @@ defmodule NervesSystemNanopiNeo.Mixfile do
      files: ["rootfs-additions", "busybox_defconfig", "LICENSE",
              "mix.exs", "nerves_defconfig", "nerves.exs", "README.md",
              "VERSION", "fwup.conf", "post-createfs.sh", "uboot",
-             "uboot-script.cmd", "linux"],
+             "uboot-script.cmd", "linux", "linux_defconfig"],
      licenses: ["Apache 2.0"],
      links: %{"Github" => "https://github.com/dhanson358/nerves_system_nanopi_neo"}]
   end
